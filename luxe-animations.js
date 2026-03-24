@@ -141,11 +141,12 @@ const map = (v, a, b, c, d) => c + ((v - a) / (b - a)) * (d - c);
     .header-cta.loaded { opacity: 1; transform: translateX(0); }
 
     /* ── hero background ken-burns ── */
-    .hero { background-size: 120% !important; animation: kenBurns 18s ease-in-out infinite alternate; }
-    @keyframes kenBurns {
-      0%   { background-size: 110%; background-position: 60% 40%; }
-      100% { background-size: 125%; background-position: 45% 55%; }
-    }
+    @media (min-width: 769px) {
+        .hero { background-size: 120% !important; animation: kenBurns 18s ease-in-out infinite alternate; }
+        @keyframes kenBurns {
+          0%   { background-size: 110%; background-position: 60% 40%; }
+          100% { background-size: 125%; background-position: 45% 55%; }
+        }
 
     /* ── hero overlay gradient pulse ── */
     .hero::before {
@@ -668,7 +669,7 @@ function initParallax() {
         const sy = window.scrollY;
 
         // Hero parallax (subtle background-position shift)
-        if (hero) {
+        if (hero && window.innerWidth > 768) {
             const speed = 0.25;
             hero.style.backgroundPositionY = `calc(50% + ${sy * speed}px)`;
         }

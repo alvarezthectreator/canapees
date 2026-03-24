@@ -324,7 +324,13 @@ section {
 .hero {
     position: relative;
     min-height: 600px;
-    background: var(--primary) center/cover no-repeat;
+    background-color: var(--primary);
+    background-image: url('img/low-angle-friends-holding-cocktails.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    /* important — fixes iOS blank gap bug */
     display: flex;
     align-items: flex-end;
     overflow: hidden;
@@ -993,11 +999,23 @@ section {
     .mobile-menu-btn {
         display: flex;
     }
+    /* ✅ One clean hero rule */
     .hero {
-        min-height: 480px;
+        min-height: 100vh;
+        background-size: cover;
+        background-position: center center;
+        background-attachment: scroll;
+    }
+    .hero::after {
+        background: linear-gradient( to top, rgba(61, 36, 16, 0.92) 0%, rgba(61, 36, 16, 0.55) 45%, rgba(61, 36, 16, 0.2) 100%);
+    }
+    .hero-content {
+        padding: 40px 20px 60px;
+        max-width: 100%;
     }
     .hero-tag {
-        font-size: 3.5rem;
+        font-size: clamp(2.8rem, 13vw, 4.5rem);
+        line-height: 1;
     }
     .section-pad {
         padding: 70px 0;
@@ -1014,5 +1032,14 @@ section {
     }
     .footer-phone {
         font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 85svh;
+    }
+    .hero-tag {
+        font-size: clamp(2.4rem, 12vw, 3.2rem);
     }
 }
