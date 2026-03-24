@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Our Services — Mocktail Canapés | Brooklyn, New York</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+         :root {
+            --primary: #8e623b;
+            --primary-dark: #6b4828;
+            --gold: #C9A84C;
+            --gold-light: #bd956a;
+            --white: #FFFFFF;
+            --cream: #efe7de;
+            --cream-light: #edf2f5;
+            --taupe: #c3b19b;
+            --dark: #3d2410;
+            --text: #7a6555;
+            --light-bg: #efe7de;
+            --overlay: rgba(142, 98, 59, 0.08);
+            --font-body: 'Inter', sans-serif;
+            --font-display: 'Forum', serif;
+            --container: 1290px;
+            --transition: 0.3s ease;
+        }
+        
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text);
+            background: var(--white);
+        }
+        
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color var(--transition);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: var(--font-display);
+            color: var(--dark);
+            line-height: 1.15;
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+        
+        h3 {
+            font-size: 1.25rem;
+        }
+        
+        .sub-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        
+        .sub-label::before,
+        .sub-label::after {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 2px;
+            background: var(--gold);
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition);
+            border-radius: 4px;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background: var(--gold);
+            color: var(--dark);
+        }
+        
+        .btn-gold {
+            background: var(--gold);
+            color: var(--dark);
+        }
+        
+        .btn-gold:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+        /* TOP BAR */
+        
+        .top-bar {
+            background: var(--cream);
+            padding: 10px 30px;
+            font-size: 0.85rem;
+            border-bottom: 1px solid var(--taupe);
+        }
+        
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--dark);
+        }
+        
+        .top-bar-social {
+            display: flex;
+            gap: 14px;
+        }
+        
+        .top-bar-social a {
+            color: var(--primary);
+        }
+        
+        .top-bar-social a:hover {
+            color: var(--gold);
+        }
+        /* HEADER */
+        
+        .site-header {
+            background: var(--primary);
+            padding: 0 30px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            border-bottom: 2px solid var(--gold);
+        }
+        
+        .site-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+        
+        .logo img {
+            height: 45px;
+            width: auto;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+        
+        .main-nav a {
+            color: var(--cream);
+            font-size: 0.88rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 0 22px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            transition: color var(--transition);
+        }
+        
+        .main-nav a:hover,
+        .main-nav .active a {
+            color: var(--gold);
+        }
+        
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        
+        .header-phone {
+            color: var(--cream);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+        
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--cream);
+        }
+        /* BREADCRUMB */
+        
+        .breadcrumb {
+            background: var(--cream);
+            padding: 14px 0;
+            border-bottom: 1px solid var(--taupe);
+        }
+        
+        .breadcrumb .container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            color: var(--text);
+        }
+        
+        .breadcrumb a {
+            color: var(--primary);
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--gold);
+        }
+        
+        .breadcrumb span {
+            color: var(--taupe);
+        }
+        /* PAGE HERO */
+        
+        .page-hero {
+            background: var(--primary);
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0 90px;
+        }
+        
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -80px;
+            width: 520px;
+            height: 520px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: -60px;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.07) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .page-hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .page-hero-text .sub-label {
+            color: var(--gold);
+        }
+        
+        .page-hero-text .sub-label::before,
+        .page-hero-text .sub-label::after {
+            background: var(--gold);
+        }
+        
+        .page-hero-text h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            color: var(--cream-light);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+        
+        .page-hero-text p {
+            color: var(--taupe);
+            font-size: 1rem;
+            max-width: 480px;
+            line-height: 1.8;
+        }
+        
+        .page-hero-image {
+            position: relative;
+        }
+        
+        .page-hero-image img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            border-radius: 2px;
+            border: 3px solid rgba(201, 168, 76, 0.3);
+        }
+        
+        .page-hero-image .gold-accent {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            width: 100px;
+            height: 100px;
+            border: 3px solid var(--gold);
+            border-radius: 2px;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        /* OFFER STRIP */
+        
+        .offer-strip {
+            background: var(--primary);
+            padding: 18px 0;
+            border-bottom: 2px solid var(--gold);
+        }
+        
+        .offer-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .pill {
+            background: rgba(239, 231, 222, 0.12);
+            color: var(--cream);
+            border: 1px solid rgba(201, 168, 76, 0.35);
+            padding: 7px 18px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+        }
+        /* SERVICES INTRO */
+        
+        .services-intro {
+            padding: 90px 0 60px;
+            background: var(--white);
+            text-align: center;
+        }
+        
+        .services-intro p {
+            max-width: 680px;
+            margin: 0 auto;
+            font-size: 1rem;
+            color: var(--text);
+        }
+        /* MAIN SERVICES GRID */
+        
+        .services-grid-section {
+            padding: 0 0 100px;
+            background: var(--white);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            border: 2px solid var(--taupe);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .service-card {
+            background: var(--white);
+            padding: 44px 36px;
+            border-right: 2px solid var(--taupe);
+            border-bottom: 2px solid var(--taupe);
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition);
+        }
+        
+        .service-card:nth-child(3n) {
+            border-right: none;
+        }
+        
+        .service-card:nth-child(4),
+        .service-card:nth-child(5),
+        .service-card:nth-child(6) {
+            border-bottom: none;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--gold));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .service-card:hover {
+            background: var(--cream);
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-card-icon {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover .service-card-icon {
+            transform: scale(1.1);
+        }
+        
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            color: var(--dark);
+            font-weight: 400;
+            margin-bottom: 14px;
+        }
+        
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .service-items-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .service-items-list li {
+            font-size: 0.82rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .service-items-list li::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            flex-shrink: 0;
+        }
+        /* FEATURED SERVICE — FULL WIDTH */
+        
+        .featured-service {
+            margin-top: 2px;
+            grid-column: span 3;
+            border-bottom: none;
+            border-right: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            padding: 0;
+            background: var(--primary);
+        }
+        
+        .featured-service:hover {
+            background: var(--primary-dark);
+        }
+        
+        .featured-service::before {
+            background: linear-gradient(90deg, var(--gold), var(--primary));
+        }
+        
+        .featured-service-text {
+            padding: 52px 48px;
+        }
+        
+        .featured-service-text .service-card-icon {
+            font-size: 2.5rem;
+        }
+        
+        .featured-service-text h3 {
+            color: var(--cream-light);
+            font-size: 1.8rem;
+        }
+        
+        .featured-service-text p {
+            color: var(--taupe);
+        }
+        
+        .featured-service-text .service-items-list li {
+            color: var(--taupe);
+        }
+        
+        .featured-service-text .service-items-list li::before {
+            background: var(--gold);
+        }
+        
+        .featured-service-img {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .featured-service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            min-height: 280px;
+        }
+        
+        .featured-service:hover .featured-service-img img {
+            transform: scale(1.04);
+        }
+        
+        .featured-service-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, var(--primary) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        /* HOW IT WORKS */
+        
+        .how-it-works {
+            padding: 100px 0;
+            background: var(--cream);
+        }
+        
+        .how-it-works .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            position: relative;
+        }
+        
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 36px;
+            left: calc(12.5% + 20px);
+            right: calc(12.5% + 20px);
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--primary), var(--gold));
+            z-index: 0;
+        }
+        
+        .step-item {
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .step-number {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            color: var(--cream-light);
+            margin: 0 auto 24px;
+            position: relative;
+            z-index: 2;
+            transition: all var(--transition);
+        }
+        
+        .step-item:hover .step-number {
+            background: var(--gold);
+            color: var(--dark);
+        }
+        
+        .step-item h4 {
+            font-family: var(--font-display);
+            color: var(--dark);
+            font-size: 1.15rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        
+        .step-item p {
+            font-size: 0.88rem;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        /* EVENT TYPES */
+        
+        .event-types {
+            padding: 100px 0;
+            background: var(--white);
+        }
+        
+        .event-types .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        
+        .event-card {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            cursor: pointer;
+            transition: transform var(--transition);
+        }
+        
+        .event-card:hover {
+            transform: translateY(-6px);
+        }
+        
+        .event-card-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .event-card:hover .event-card-bg {
+            transform: scale(1.06);
+        }
+        
+        .event-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(61, 36, 16, 0.9) 100%);
+        }
+        
+        .event-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 32px 28px;
+        }
+        
+        .event-card-icon {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .event-card h3 {
+            font-family: var(--font-display);
+            color: var(--cream-light);
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        
+        .event-card p {
+            color: var(--taupe);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        /* PACKAGE TIERS */
+        
+        .packages-section {
+            padding: 100px 0;
+            background: var(--dark);
+        }
+        
+        .packages-section .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .packages-section .section-header h2 {
+            color: var(--cream-light);
+        }
+        
+        .packages-section .sub-label {
+            color: var(--gold);
+        }
+        
+        .packages-section .sub-label::before,
+        .packages-section .sub-label::after {
+            background: var(--gold);
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        
+        .package-card {
+            background: rgba(239, 231, 222, 0.05);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            border-radius: 4px;
+            padding: 44px 36px;
+            text-align: center;
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .package-card.featured {
+            background: var(--primary);
+            border-color: var(--gold);
+            transform: translateY(-8px);
+        }
+        
+        .package-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: var(--dark);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            padding: 5px 18px;
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .package-card:hover {
+            border-color: var(--gold);
+            background: rgba(239, 231, 222, 0.1);
+        }
+        
+        .package-card.featured:hover {
+            background: var(--primary-dark);
+        }
+        
+        .package-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+        
+        .package-name {
+            font-family: var(--font-display);
+            color: var(--cream-light);
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        
+        .package-tagline {
+            color: var(--taupe);
+            font-size: 0.85rem;
+            margin-bottom: 28px;
+        }
+        
+        .package-features {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 36px;
+            text-align: left;
+        }
+        
+        .package-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.88rem;
+            color: var(--taupe);
+        }
+        
+        .package-feature .check {
+            color: var(--gold);
+            font-size: 1rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        /* TESTIMONIALS STRIP */
+        
+        .testimonials {
+            padding: 80px 0;
+            background: var(--cream);
+            border-top: 1px solid var(--taupe);
+        }
+        
+        .testimonials .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 4px;
+            padding: 32px 28px;
+            border: 1px solid var(--taupe);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-family: var(--font-display);
+            font-size: 5rem;
+            color: var(--gold);
+            opacity: 0.2;
+            position: absolute;
+            top: 8px;
+            right: 20px;
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            font-size: 0.9rem;
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .testimonial-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            color: var(--cream-light);
+            font-size: 1rem;
+        }
+        
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: var(--dark);
+        }
+        
+        .testimonial-event {
+            font-size: 0.78rem;
+            color: var(--text);
+        }
+        
+        .stars {
+            color: var(--gold);
+            font-size: 0.8rem;
+            margin-bottom: 4px;
+        }
+        /* FAQ */
+        
+        .faq-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+        
+        .faq-section .container {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            gap: 80px;
+            align-items: start;
+        }
+        
+        .faq-intro h2 {
+            margin-bottom: 20px;
+        }
+        
+        .faq-intro p {
+            font-size: 0.97rem;
+            margin-bottom: 32px;
+        }
+        
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid var(--taupe);
+            overflow: hidden;
+        }
+        
+        .faq-item:first-child {
+            border-top: 1px solid var(--taupe);
+        }
+        
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            cursor: pointer;
+            user-select: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--dark);
+            transition: color var(--transition);
+            gap: 16px;
+        }
+        
+        .faq-question:hover {
+            color: var(--primary);
+        }
+        
+        .faq-toggle {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--cream);
+            border: 1px solid var(--taupe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--primary);
+            flex-shrink: 0;
+            transition: all var(--transition);
+        }
+        
+        .faq-item.open .faq-toggle {
+            background: var(--primary);
+            color: var(--white);
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+        
+        .faq-answer p {
+            padding: 0 0 20px;
+            font-size: 0.9rem;
+            color: var(--text);
+            line-height: 1.7;
+        }
+        /* CTA BANNER */
+        
+        .cta-banner {
+            background: var(--primary);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .cta-banner .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-banner .sub-label {
+            color: var(--gold);
+        }
+        
+        .cta-banner .sub-label::before,
+        .cta-banner .sub-label::after {
+            background: var(--gold);
+        }
+        
+        .cta-banner h2 {
+            color: var(--cream-light);
+            margin-bottom: 16px;
+        }
+        
+        .cta-banner p {
+            color: var(--taupe);
+            max-width: 500px;
+            margin: 0 auto 36px;
+            font-size: 0.97rem;
+        }
+        
+        .cta-btns {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        /* FOOTER */
+        
+        .site-footer {
+            background: var(--dark);
+            color: var(--taupe);
+            padding: 80px 0 0;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr 1fr;
+            gap: 48px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(195, 177, 155, 0.2);
+        }
+        
+        .footer-brand img {
+            height: 45px;
+            width: auto;
+            margin-bottom: 20px;
+        }
+        
+        .footer-brand p {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 14px;
+        }
+        
+        .footer-social a {
+            color: var(--taupe);
+            transition: color var(--transition);
+        }
+        
+        .footer-social a:hover {
+            color: var(--gold);
+        }
+        
+        .footer-col h4 {
+            color: var(--taupe);
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            font-family: var(--font-body);
+        }
+        
+        .footer-col ul {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .footer-col a {
+            color: var(--cream);
+            font-size: 0.9rem;
+        }
+        
+        .footer-col a:hover {
+            color: var(--gold);
+        }
+        
+        .footer-phone {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--cream);
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+        
+        .footer-bottom {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px 0;
+            font-size: 0.82rem;
+            border-top: 1px solid rgba(201, 168, 76, 0.2);
+        }
+        /* SECTION HEADER */
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        /* ANIMATIONS */
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: none;
+        }
+        
+        .fade-in-delay-1 {
+            transition-delay: 0.1s;
+        }
+        
+        .fade-in-delay-2 {
+            transition-delay: 0.2s;
+        }
+        
+        .fade-in-delay-3 {
+            transition-delay: 0.3s;
+        }
+        
+        .fade-in-delay-4 {
+            transition-delay: 0.4s;
+        }
+        /* STATS STRIP */
+        
+        .stats-strip {
+            background: var(--dark);
+            padding: 60px 0;
+            border-top: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px 16px;
+            border-right: 1px solid rgba(201, 168, 76, 0.2);
+        }
+        
+        .stat-item:last-child {
+            border-right: none;
+        }
+        
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--taupe);
+        }
+        /* RESPONSIVE */
+        
+        @media (max-width: 1024px) {
+            .page-hero .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .page-hero-image {
+                display: none;
+            }
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .service-card:nth-child(3n) {
+                border-right: 2px solid var(--taupe);
+            }
+            .service-card:nth-child(2n) {
+                border-right: none;
+            }
+            .featured-service {
+                grid-column: span 2;
+            }
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+            .steps-grid::before {
+                display: none;
+            }
+            .events-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .packages-grid {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+            .package-card.featured {
+                transform: none;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .faq-section .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 36px;
+            }
+            .top-bar-left {
+                display: none;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stat-item:nth-child(2) {
+                border-right: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2rem;
+            }
+            .main-nav,
+            .header-phone {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: flex;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .service-card {
+                border-right: none !important;
+            }
+            .featured-service {
+                grid-column: span 1;
+                grid-template-columns: 1fr;
+            }
+            .featured-service-img {
+                display: none;
+            }
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .footer-phone {
+                font-size: 1.5rem;
+            }
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <span class="top-bar-item">
+                    <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z"/></svg>
+                    orders@luxecanapescatering.com
+                </span>
+                <span class="top-bar-item">
+                    <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8z"/><path fill-rule="evenodd" d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z"/></svg>
+                    Brooklyn, New York 🇺🇸
+                </span>
+            </div>
+            <div class="top-bar-social">
+                <a href="https://www.instagram.com/luxecanapes/" target="_blank" aria-label="Instagram">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://www.tiktok.com/@luxecanapes_" target="_blank" aria-label="TikTok">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/></svg>
+                </a>
+                <a href="#" target="_blank" aria-label="Facebook">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="wp-content/uploads/2022/12/Luxe-Canapes-logos-gold-1.png" alt="Luxe Canapés" />
+            </a>
+            <nav class="main-nav" aria-label="Primary">
+                <ul>
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="Aboutus.html">About Us</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <span class="header-phone">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    Send us a DM
+                </span>
+                <a href="/event-booking/" class="btn btn-gold" style="font-size: 12px; padding: 6px 14px; border-radius: 50px; display: inline-block; text-align: center; margin: 0 auto; width: fit-content;">Get Catering Quote</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/">Home</a>
+            <span>›</span>
+            <span style="color: var(--primary); font-weight: 600;">Our Services</span>
+        </div>
+    </div>
+
+    <main>
+
+        <!-- PAGE HERO -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-text fade-in">
+                    <span class="sub-label">What We Offer</span>
+                    <h1>Full-Service Luxury<br>Catering — Your Way</h1>
+                    <p>From intimate gatherings to grand galas, we bring restaurant-quality food, bespoke styling, and an unforgettable experience to every event we touch.</p>
+                    <br />
+                    <a href="/event-booking/" class="btn btn-gold" style="margin-top: 8px;">Get a Free Quote →</a>
+                </div>
+                <div class="page-hero-image fade-in fade-in-delay-2">
+                    <img src="https://luxecanapescatering.com/wp-content/uploads/2025/10/Decor-300x430.jpg" alt="Luxe Canapés service setup" />
+                    <div class="gold-accent"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OFFER STRIP -->
+        <section class="offer-strip">
+            <div class="container">
+                <div class="offer-pills">
+                    <span class="pill">🥐 Finger Foods</span>
+                    <span class="pill">🥂 Sips &amp; Fresh Juice</span>
+                    <span class="pill">🍰 Canapés &amp; Desserts</span>
+                    <span class="pill">🍹 Cocktails &amp; Mocktails</span>
+                    <span class="pill">🍱 Food Trays</span>
+                    <span class="pill">🎉 Events &amp; Parties</span>
+                    <span class="pill">💼 Corporate</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES INTRO -->
+        <section class="services-intro fade-in">
+            <div class="container">
+                <span class="sub-label">Everything You Need</span>
+                <h2 style="margin-bottom: 20px;">A Service for Every Occasion</h2>
+                <p>We are a one-stop luxury catering studio. Whether you need a tray of golden puff puff for a baby shower or a full cocktail-and-canapé spread for 300 guests, we handle every detail — from the first bite to the last sip.</p>
+            </div>
+        </section>
+
+        <!-- MAIN SERVICES GRID -->
+        <section class="services-grid-section">
+            <div class="container">
+                <div class="services-grid">
+
+                    <div class="service-card fade-in">
+                        <span class="service-card-icon">🥐</span>
+                        <h3>Finger Foods &amp; Small Chops</h3>
+                        <p>Our signature small chops platters are the heartbeat of every party — golden, crispy, and impossible to put down.</p>
+                        <ul class="service-items-list">
+                            <li>Meat Pies &amp; Chicken Pies</li>
+                            <li>Sausage Rolls &amp; Fish Rolls</li>
+                            <li>Puff Puff &amp; Spring Rolls</li>
+                            <li>Mini Samosas</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card fade-in fade-in-delay-1">
+                        <span class="service-card-icon">🍢</span>
+                        <h3>Entrées &amp; Canapés</h3>
+                        <p>Bold African-inspired flavours elevated into elegant bites — perfect for cocktail hours and upscale receptions.</p>
+                        <ul class="service-items-list">
+                            <li>Stick Gizzard &amp; Suya</li>
+                            <li>Peppered Snail &amp; Coconut Shrimp</li>
+                            <li>Chicken Kebabs &amp; Skewers</li>
+                            <li>Pepper Soup Bites</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card fade-in fade-in-delay-2">
+                        <span class="service-card-icon">🍰</span>
+                        <h3>Desserts &amp; Sweet Bites</h3>
+                        <p>The perfect sweet ending — or the show-stopping centrepiece. Every dessert is as beautiful as it is delicious.</p>
+                        <ul class="service-items-list">
+                            <li>Fresh Fruit Parfaits</li>
+                            <li>Macarons &amp; Mini Cakes</li>
+                            <li>Chocolate-Dipped Treats</li>
+                            <li>Seasonal Fruit Cups</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card fade-in fade-in-delay-1">
+                        <span class="service-card-icon">🍹</span>
+                        <h3>Mocktails &amp; Fresh Juices</h3>
+                        <p>Our signature mocktail blends and fresh juices are crafted to delight — vibrant, beautiful, and alcohol-free.</p>
+                        <ul class="service-items-list">
+                            <li>Chapman &amp; Zobo Delight</li>
+                            <li>Piña Colada &amp; Blue Lagoon</li>
+                            <li>Signature MC Mocktail</li>
+                            <li>Cold-Pressed Fresh Juices</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card fade-in fade-in-delay-2">
+                        <span class="service-card-icon">🍱</span>
+                        <h3>Food Tray Styling</h3>
+                        <p>A Mocktail Canapés tray is a statement piece. We style each tray to match your event's theme and colour palette.</p>
+                        <ul class="service-items-list">
+                            <li>Themed Grazing Boards</li>
+                            <li>Charcuterie-Style Platters</li>
+                            <li>Luxury Gift Trays</li>
+                            <li>Event-Matched Styling</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card fade-in fade-in-delay-3">
+                        <span class="service-card-icon">🎁</span>
+                        <h3>Bespoke Orders</h3>
+                        <p>Can't see exactly what you need? We love custom requests. Tell us your vision and we'll bring it to life.</p>
+                        <ul class="service-items-list">
+                            <li>Custom Menu Planning</li>
+                            <li>Dietary &amp; Allergy Requests</li>
+                            <li>Themed Event Menus</li>
+                            <li>Consultation &amp; Tasting</li>
+                        </ul>
+                    </div>
+
+                    <!-- FEATURED FULL-WIDTH SERVICE -->
+                    <div class="service-card featured-service fade-in">
+                        <div class="featured-service-text">
+                            <span class="service-card-icon">🥂</span>
+                            <h3>Full-Service Event Catering</h3>
+                            <p>From set-up to service, we handle it all. Our full-service catering package is the ultimate luxury experience — a dedicated team, impeccable presentation, and food that leaves your guests talking long after the event ends.</p>
+                            <ul class="service-items-list" style="margin-bottom: 32px;">
+                                <li>On-site setup &amp; breakdown</li>
+                                <li>Dedicated service team</li>
+                                <li>Custom menu &amp; styling consultation</li>
+                                <li>Branded trays &amp; luxury servingware</li>
+                                <li>Suitable for 20 – 500+ guests</li>
+                            </ul>
+                            <a href="/event-booking/" class="btn btn-gold">Book This Service →</a>
+                        </div>
+                        <div class="featured-service-img">
+                            <img src="https://luxecanapescatering.com/wp-content/uploads/2025/10/Decor-300x430.jpg" alt="Full-Service Catering" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="how-it-works">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <span class="sub-label">Simple Process</span>
+                    <h2>How It Works</h2>
+                    <p style="color: var(--text); max-width: 520px; margin: 12px auto 0; font-size: 0.95rem;">Booking with us is easy. From your first message to the last bite, we make the process smooth and stress-free.</p>
+                </div>
+                <div class="steps-grid">
+                    <div class="step-item fade-in">
+                        <div class="step-number">1</div>
+                        <h4>Get in Touch</h4>
+                        <p>Slide into our DMs on Instagram or fill out our booking form. Tell us your event date, guest count, and vision.</p>
+                    </div>
+                    <div class="step-item fade-in fade-in-delay-1">
+                        <div class="step-number">2</div>
+                        <h4>We Build Your Menu</h4>
+                        <p>Our team puts together a bespoke menu and service proposal tailored to your event's style and budget.</p>
+                    </div>
+                    <div class="step-item fade-in fade-in-delay-2">
+                        <div class="step-number">3</div>
+                        <h4>Confirm &amp; Relax</h4>
+                        <p>Lock in your date with a deposit and leave the rest to us. We handle all the prep, sourcing, and styling.</p>
+                    </div>
+                    <div class="step-item fade-in fade-in-delay-3">
+                        <div class="step-number">4</div>
+                        <h4>We Show Up &amp; Shine</h4>
+                        <p>On the day, our team arrives, sets up, and delivers a luxury catering experience your guests will rave about.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS STRIP -->
+        <section class="stats-strip">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item fade-in">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Events Catered</div>
+                    </div>
+                    <div class="stat-item fade-in fade-in-delay-1">
+                        <div class="stat-number">10k+</div>
+                        <div class="stat-label">Guests Served</div>
+                    </div>
+                    <div class="stat-item fade-in fade-in-delay-2">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Menu Items</div>
+                    </div>
+                    <div class="stat-item fade-in fade-in-delay-3">
+                        <div class="stat-number">5★</div>
+                        <div class="stat-label">Client Reviews</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVENT TYPES -->
+        <section class="event-types">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <span class="sub-label">Who We Serve</span>
+                    <h2>Events We Cater For</h2>
+                </div>
+                <div class="events-grid">
+                    <div class="event-card fade-in">
+                        <img class="event-card-bg" src="https://luxecanapescatering.com/wp-content/uploads/2025/10/Spring-Roll-300x291.jpg" alt="Weddings & Receptions" />
+                        <div class="event-card-overlay"></div>
+                        <div class="event-card-content">
+                            <span class="event-card-icon">💍</span>
+                            <h3>Weddings &amp; Receptions</h3>
+                            <p>Luxurious cocktail hours, wedding receptions, and engagement parties — styled to perfection.</p>
+                        </div>
+                    </div>
+                    <div class="event-card fade-in fade-in-delay-1">
+                        <img class="event-card-bg" src="https://luxecanapescatering.com/wp-content/uploads/2025/10/Chicken-Pie-300x291.jpg" alt="Baby Showers & Birthdays" />
+                        <div class="event-card-overlay"></div>
+                        <div class="event-card-content">
+                            <span class="event-card-icon">🎀</span>
+                            <h3>Baby Showers &amp; Birthdays</h3>
+                            <p>Sweet spreads and themed trays for life's most cherished celebrations.</p>
+                        </div>
+                    </div>
+                    <div class="event-card fade-in fade-in-delay-2">
+                        <img class="event-card-bg" src="https://luxecanapescatering.com/wp-content/uploads/2025/10/Decor-300x430.jpg" alt="Corporate Events" />
+                        <div class="event-card-overlay"></div>
+                        <div class="event-card-content">
+                            <span class="event-card-icon">💼</span>
+                            <h3>Corporate Events</h3>
+                            <p>Professional-grade catering for boardrooms, product launches, and company celebrations.</p>
+                        </div>
+                    </div>
+                    <div class="event-card fade-in fade-in-delay-1">
+                        <img class="event-card-bg" src="https://luxecanapescatering.com/wp-content/uploads/2025/10/Spring-Roll-300x291.jpg" alt="Cultural Celebrations" />
+                        <div class="event-card-overlay"></div>
+                        <div class="event-card-content">
+                            <span class="event-card-icon">🎊</span>
+                            <h3>Cultural Celebrations</h3>
+                            <p>Owambe parties, naming ceremonies, graduations — we honour every milestone with great food.</p>
+                        </div>
+                    </div>
+                    <div class="event-card fade-in fade-in-delay-2">
+                        <img class="event-card-bg" src="https://luxecanapescatering.com/wp-content/uploads/2025/10/Chicken-Pie-300x291.jpg" alt="Bridal & Hen Parties" />
+                        <div class="event-card-overlay"></div>
+                        <div class="event-card-content">
+                            <span class="event-card-icon">👰</span>
+                            <h3>Bridal &amp; Hen Parties</h3>
+                            <p>Pretty platters, gorgeous mocktails, and styled grazing tables for your pre-wedding celebration.</p>
+                        </div>
+                    </div>
+                    <div class="event-card fade-in fade-in-delay-3">
+                        <img class="event-card-bg" src="https://luxecanapescatering.com/wp-content/uploads/2025/10/Decor-300x430.jpg" alt="Private Dining" />
+                        <div class="event-card-overlay"></div>
+                        <div class="event-card-content">
+                            <span class="event-card-icon">🕯️</span>
+                            <h3>Private Dining &amp; Intimate Soirées</h3>
+                            <p>Small, curated gatherings where every detail is intentional and every bite is memorable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PACKAGES -->
+        <section class="packages-section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <span class="sub-label">Choose Your Experience</span>
+                    <h2>Our Packages</h2>
+                    <p style="color: var(--taupe); max-width: 520px; margin: 12px auto 0; font-size: 0.95rem;">All packages are fully customisable. Contact us for a tailored proposal.</p>
+                </div>
+                <div class="packages-grid">
+                    <div class="package-card fade-in">
+                        <span class="package-icon">🌿</span>
+                        <div class="package-name">Essentials</div>
+                        <div class="package-tagline">Perfect for intimate gatherings up to 50 guests</div>
+                        <div class="package-features">
+                            <div class="package-feature"><span class="check">✦</span> Choice of 3 finger food items</div>
+                            <div class="package-feature"><span class="check">✦</span> 1 mocktail or juice selection</div>
+                            <div class="package-feature"><span class="check">✦</span> Standard tray styling</div>
+                            <div class="package-feature"><span class="check">✦</span> Drop-off delivery available</div>
+                            <div class="package-feature"><span class="check">✦</span> Menu consultation included</div>
+                        </div>
+                        <a href="/event-booking/" class="btn btn-primary" style="width: 100%; justify-content: center;">Get a Quote →</a>
+                    </div>
+                    <div class="package-card featured fade-in fade-in-delay-1">
+                        <span class="package-icon">✨</span>
+                        <div class="package-name">Signature</div>
+                        <div class="package-tagline">Our most popular — for events of 50–150 guests</div>
+                        <div class="package-features">
+                            <div class="package-feature"><span class="check">✦</span> Choice of 5 finger food &amp; canapé items</div>
+                            <div class="package-feature"><span class="check">✦</span> 2 mocktail selections + fresh juice</div>
+                            <div class="package-feature"><span class="check">✦</span> Themed &amp; styled tray presentation</div>
+                            <div class="package-feature"><span class="check">✦</span> On-site service team (2 staff)</div>
+                            <div class="package-feature"><span class="check">✦</span> Set-up &amp; breakdown included</div>
+                            <div class="package-feature"><span class="check">✦</span> 1 dessert selection</div>
+                        </div>
+                        <a href="/event-booking/" class="btn btn-gold" style="width: 100%; justify-content: center;">Get a Quote →</a>
+                    </div>
+                    <div class="package-card fade-in fade-in-delay-2">
+                        <span class="package-icon">👑</span>
+                        <div class="package-name">Luxe</div>
+                        <div class="package-tagline">The full experience — 150 to 500+ guests</div>
+                        <div class="package-features">
+                            <div class="package-feature"><span class="check">✦</span> Full bespoke menu — unlimited items</div>
+                            <div class="package-feature"><span class="check">✦</span> Full mocktail, cocktail &amp; juice bar</div>
+                            <div class="package-feature"><span class="check">✦</span> Premium luxury tray &amp; décor styling</div>
+                            <div class="package-feature"><span class="check">✦</span> Dedicated service team (4+ staff)</div>
+                            <div class="package-feature"><span class="check">✦</span> Full setup, service &amp; breakdown</div>
+                            <div class="package-feature"><span class="check">✦</span> Dessert station included</div>
+                            <div class="package-feature"><span class="check">✦</span> Priority booking &amp; consultation</div>
+                        </div>
+                        <a href="/event-booking/" class="btn btn-primary" style="width: 100%; justify-content: center;">Get a Quote →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="testimonials">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <span class="sub-label">What Clients Say</span>
+                    <h2>Rave Reviews</h2>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card fade-in">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">"Mocktail Canapés absolutely delivered for my daughter's baby shower. The food was stunning, the trays were beautifully styled, and the mocktails were a huge hit. Every single guest asked for their info!"</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">A</div>
+                            <div>
+                                <div class="testimonial-name">Adaeze O.</div>
+                                <div class="testimonial-event">Baby Shower — Brooklyn, NY</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card fade-in fade-in-delay-1">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">"Our corporate launch event was elevated to another level. Professional, punctual, and the food was absolutely incredible. The puff puff and suya disappeared within minutes!"</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">M</div>
+                            <div>
+                                <div class="testimonial-name">Marcus T.</div>
+                                <div class="testimonial-event">Corporate Launch — Manhattan, NY</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card fade-in fade-in-delay-2">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">"We booked them for our owambe and I cannot say enough. 200 guests, zero complaints. The Chapman and the small chops were the talk of the party. We are re-booking for our next event without question."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">F</div>
+                            <div>
+                                <div class="testimonial-name">Funmi A.</div>
+                                <div class="testimonial-event">Owambe Party — New Jersey</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="faq-intro fade-in">
+                    <span class="sub-label">Got Questions?</span>
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Can't find your answer here? Reach out to us directly — we're happy to help.</p>
+                    <a href="/contact/" class="btn btn-primary">Contact Us →</a>
+                </div>
+                <div class="faq-list fade-in fade-in-delay-2">
+                    <div class="faq-item open">
+                        <div class="faq-question">
+                            How far in advance should I book?
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We recommend booking at least 2–4 weeks in advance for smaller events, and 6–8 weeks for larger events (150+ guests). That said, we do accommodate last-minute requests where possible — just DM us and we'll do our best!</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Do you cater outside of Brooklyn?
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! While we're based in Brooklyn, we serve clients across all five boroughs of New York City and the surrounding New Jersey and Connecticut areas. Travel fees may apply for events outside Brooklyn. Contact us to confirm your
+                                location.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can you accommodate dietary restrictions?
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely. We offer halal options, vegetarian-friendly items, and can work around most common allergies. Please let us know your requirements when you get in touch so we can build a menu that works for all your guests.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What is your minimum order / guest count?
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We cater to events of all sizes — from intimate gatherings of 10 to large celebrations of 500+. For drop-off orders, a minimum order value applies. Get in touch and we'll give you a clear quote based on your specific needs.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Do you provide service staff?
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes — our Signature and Luxe packages include a dedicated service team for set-up, serving, and breakdown. For our Essentials package, drop-off delivery is available. Our team always arrives professionally dressed and ready
+                                to represent your event beautifully.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How do I secure my booking?
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Once we've agreed on your menu and service details, a deposit is required to confirm your date. The remaining balance is due 48–72 hours before your event. We accept multiple payment methods — ask us for details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA BANNER -->
+        <section class="cta-banner">
+            <div class="container">
+                <span class="sub-label">Ready to Book?</span>
+                <h2>Let's Make Your Event Unforgettable</h2>
+                <p>Get in touch today and we'll put together a bespoke catering proposal built around your event's theme, scale, and vision.</p>
+                <div class="cta-btns">
+                    <a href="/event-booking/" class="btn btn-gold">Book Your Event →</a>
+                    <a href="https://www.instagram.com/luxecanapes/" target="_blank" class="btn" style="background: rgba(255,255,255,0.15); color: var(--cream); border: 1px solid rgba(201,168,76,0.5);">Send a DM →</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="wp-content/uploads/2022/12/Luxe-Canapes-logos-gold-1.png" alt="Mocktail Canapés" />
+                    <p>Finger foods, sips &amp; luxury catering for events, parties &amp; corporates — Brooklyn, New York 🇺🇸</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/luxecanapes/" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@luxecanapes_" aria-label="TikTok">
+                            <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/about-us/">About Us</a></li>
+                        <li><a href="/our-services/">Our Services</a></li>
+                        <li><a href="/gallery/">Gallery</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Menu</h4>
+                    <ul>
+                        <li><a href="/menu/">Finger Foods</a></li>
+                        <li><a href="/menu/">Small Chops</a></li>
+                        <li><a href="/menu/">Canapés &amp; Desserts</a></li>
+                        <li><a href="/menu/">Cocktails &amp; Mocktails</a></li>
+                        <li><a href="/menu/">Fresh Juice</a></li>
+                        <li><a href="/menu/">Food Trays</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get In Touch</h4>
+                    <div class="footer-phone">Send Us a DM</div>
+                    <a href="https://www.instagram.com/luxecanapes/" style="color: rgba(255,255,255,0.7); font-size: 0.85rem;">@mocktail_canapes</a>
+                    <br /><br />
+                    <h4>Location</h4>
+                    <span style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Brooklyn, New York 🇺🇸</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 <strong style="color: var(--white)">Mocktail Canapés &amp; Catering</strong></p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll-triggered fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, {
+            threshold: 0.1
+        });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

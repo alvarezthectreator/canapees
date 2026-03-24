@@ -1,0 +1,191 @@
+/**
+ * Front view CSS file
+ */
+.mmqw_shipping .extra-flate-tool-tip,
+.mmqwm_shipping .forceall-tooltip {
+    display: inline;
+    position: relative;
+}
+
+/* Add this attribute to the element that needs a tooltip */
+.mmqw_shipping [data-tooltip] {
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* Hide the tooltip content by default */
+.mmqw_shipping [data-tooltip]:before,
+.mmqw_shipping [data-tooltip]:after {
+    visibility: hidden;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Position tooltip above the element */
+.mmqw_shipping [data-tooltip]:before {
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    margin-bottom: 5px;
+    margin-left: -80px;
+    padding: 7px;
+    width: 300px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #000;
+    background-color: hsla(0, 0%, 20%, 0.9);
+    color: #fff;
+    content: attr(data-tooltip);
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+.mmqw_shipping [data-tooltip]:after {
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -5px;
+    width: 0;
+    border-top: 5px solid #000;
+    border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    content: " ";
+    font-size: 0;
+    line-height: 0;
+}
+
+/* Show tooltip content on hover */
+.mmqw_shipping [data-tooltip]:hover:before,
+.mmqw_shipping [data-tooltip]:hover:after {
+    visibility: visible;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    opacity: 1;
+}
+
+.mmqw_shipping .extra-flate-tool-tip,
+.mmqwm_shipping .forceall-tooltip {
+    display: inline-block !important;
+    float: left;
+    margin-right: 7px;
+}
+
+.forceall_shipping_method {
+    display: none;
+}
+
+#shipping_method li label {
+    font-weight: 400;
+}
+
+
+.mmqw_shipping .forceall-tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.mmqw_shipping .forceall-tooltip .tooltiptext {
+    visibility: hidden;
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    margin-bottom: 5px;
+    margin-left: -80px;
+    padding: 7px;
+    width: 300px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #000;
+    background-color: hsla(0, 0%, 20%, 0.9);
+    color: #fff;
+    content: attr(data-tooltip);
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.mmqw_shipping .forceall-tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.single-product form.cart .quantity.hidden {
+    display: block;
+    width: 100%;
+    padding: 20px 0 20px;
+}
+
+.mmqw-display-rules {
+    padding-top: 20px;
+}
+
+.checkout-rules-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.checkout-rules-table th,
+.checkout-rules-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.checkout-rules-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.checkout-rules-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.checkout-rules-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Ensure the last row spans two columns */
+.checkout-rules-table td[colspan="2"] {
+    text-align: left;
+}
+
+.quantity .select2-container .select2-selection {
+    min-height: 44px !important;
+}
+
+.quantity .select2-selection__rendered,
+.quantity .select2-selection__arrow {
+    height: 44px !important;
+    line-height: 44px !important;
+    padding: 0px 15px !important;
+}
+.quantity-select {
+    padding: 10px;
+}
+
+table.cart td.product-quantity .qty {
+    padding: .326em;
+    width: 3.706325903em;
+}
+ul.cart-display-rules {
+    margin: 0 0 0 20px;
+}
+.products .quantity {
+    margin: 15px 0;
+}
+.product .quantity {
+    text-align: center;
+}
+.product .quantity input {
+    padding: 6px;
+}

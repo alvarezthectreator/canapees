@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gallery — Mocktail Canapés</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Cinzel:wght@400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+    <style>
+         :root {
+            --cream: #F5EFE6;
+            --cream-dark: #EDE4D6;
+            --brown: #5C3A1E;
+            --brown-mid: #8B5E3C;
+            --brown-light: #C4966A;
+            --brown-pale: #D9BFA0;
+            --gold: #C9A84C;
+            --text: #3A2010;
+            --white: #FFF9F2;
+        }
+        /* BASE */
+        
+        body {
+            margin: 0;
+            font-family: 'Jost', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+        }
+        /* HEADER */
+        
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--brown-pale);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-text {
+            font-family: 'Cinzel', serif;
+            letter-spacing: .2em;
+            color: var(--brown);
+            text-decoration: none;
+        }
+        
+        nav a {
+            margin-left: 24px;
+            text-decoration: none;
+            color: var(--brown-mid);
+            font-size: .8rem;
+            letter-spacing: .15em;
+        }
+        
+        nav a.active {
+            color: var(--brown);
+        }
+        /* HERO */
+        
+        .gallery-hero {
+            text-align: center;
+            padding: 80px 20px 50px;
+            background: var(--cream-dark);
+        }
+        
+        .gallery-hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-style: italic;
+            color: var(--brown);
+        }
+        
+        .gallery-hero p {
+            color: var(--brown-mid);
+            font-size: .9rem;
+        }
+        /* GRID */
+        
+        .gallery-wrap {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 32px;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+        }
+        /* CARD */
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 14px;
+            background: var(--white);
+            border: 1px solid var(--cream-dark);
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            transition: transform .4s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+        /* OVERLAY */
+        
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(58, 32, 16, .5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-family: 'Cinzel', serif;
+            font-size: .9rem;
+            letter-spacing: .2em;
+            opacity: 0;
+            transition: .3s;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        /* LIGHTBOX */
+        
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .85);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 500;
+        }
+        
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 12px;
+        }
+        
+        .lightbox.open {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo-text">Mocktail Canapés</a>
+            <nav>
+                <ul>
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="Aboutus.html">About Us</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="gallery-hero">
+        <h1>Gallery</h1>
+        <p>A glimpse into our beautifully curated events & dishes</p>
+    </section>
+
+    <div class="gallery-wrap">
+        <div class="gallery-grid">
+
+            <!-- IMAGE ITEM -->
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" />
+                <div class="gallery-overlay">VIEW</div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" />
+                <div class="gallery-overlay">VIEW</div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1" />
+                <div class="gallery-overlay">VIEW</div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187" />
+                <div class="gallery-overlay">VIEW</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightboxImg">
+    </div>
+
+    <script>
+        function openLightbox(el) {
+            const img = el.querySelector("img").src;
+            document.getElementById("lightboxImg").src = img;
+            document.getElementById("lightbox").classList.add("open");
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").classList.remove("open");
+        }
+    </script>
+
+</body>
+
+</html>

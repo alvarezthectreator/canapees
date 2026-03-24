@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact — Mocktail Canapés</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Cinzel:wght@400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+         :root {
+            --cream: #F5EFE6;
+            --cream-dark: #EDE4D6;
+            --brown: #5C3A1E;
+            --brown-mid: #8B5E3C;
+            --brown-light: #C4966A;
+            --brown-pale: #D9BFA0;
+            --gold: #C9A84C;
+            --text: #3A2010;
+            --white: #FFF9F2;
+        }
+        /* BASE */
+        
+        body {
+            margin: 0;
+            font-family: 'Jost', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+        }
+        /* HEADER */
+        
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--brown-pale);
+        }
+        
+        .header-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-text {
+            font-family: 'Cinzel', serif;
+            letter-spacing: .2em;
+            color: var(--brown);
+            text-decoration: none;
+        }
+        
+        nav a {
+            margin-left: 24px;
+            text-decoration: none;
+            color: var(--brown-mid);
+            font-size: .8rem;
+            letter-spacing: .15em;
+        }
+        
+        nav a.active {
+            color: var(--brown);
+        }
+        /* HERO */
+        
+        .contact-hero {
+            text-align: center;
+            padding: 80px 20px 50px;
+            background: var(--cream-dark);
+        }
+        
+        .contact-hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-style: italic;
+            color: var(--brown);
+        }
+        
+        .contact-hero p {
+            color: var(--brown-mid);
+            font-size: .9rem;
+        }
+        /* LAYOUT */
+        
+        .contact-wrap {
+            max-width: 1100px;
+            margin: auto;
+            padding: 50px 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        @media(max-width:900px) {
+            .contact-wrap {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* FORM */
+        
+        .contact-form {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 14px;
+            border: 1px solid var(--cream-dark);
+        }
+        
+        .form-group {
+            margin-bottom: 16px;
+        }
+        
+        .form-group label {
+            font-size: .75rem;
+            letter-spacing: .1em;
+            color: var(--brown-mid);
+            display: block;
+            margin-bottom: 6px;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--brown-pale);
+            border-radius: 8px;
+            background: var(--cream);
+            font-family: 'Jost';
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: var(--brown);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-family: 'Cinzel';
+            letter-spacing: .2em;
+            cursor: pointer;
+        }
+        
+        .submit-btn:hover {
+            background: var(--brown-mid);
+        }
+        /* INFO */
+        
+        .contact-info {
+            padding: 10px;
+        }
+        
+        .info-block {
+            margin-bottom: 24px;
+        }
+        
+        .info-title {
+            font-family: 'Cormorant Garamond';
+            font-size: 1.2rem;
+            color: var(--brown);
+            margin-bottom: 6px;
+        }
+        
+        .info-text {
+            font-size: .9rem;
+            color: var(--brown-mid);
+        }
+        /* SOCIAL */
+        
+        .socials {
+            margin-top: 20px;
+        }
+        
+        .socials a {
+            margin-right: 12px;
+            text-decoration: none;
+            color: var(--brown);
+            font-size: .85rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo-text">Mocktail Canapés</a>
+            <nav>
+                <ul>
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="Aboutus.html">About Us</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contact-hero">
+        <h1>Contact Us</h1>
+        <p>Let’s plan your perfect event — we’d love to hear from you</p>
+    </section>
+
+    <div class="contact-wrap">
+
+        <!-- FORM -->
+        <div class="contact-form">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Your name">
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="your@email.com">
+            </div>
+
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" placeholder="Phone number">
+            </div>
+
+            <div class="form-group">
+                <label>Message</label>
+                <textarea placeholder="Tell us about your event..."></textarea>
+            </div>
+
+            <button class="submit-btn">SEND MESSAGE</button>
+        </div>
+
+        <!-- INFO -->
+        <div class="contact-info">
+            <div class="info-block">
+                <div class="info-title">Location</div>
+                <div class="info-text">Brooklyn, New York</div>
+            </div>
+
+            <div class="info-block">
+                <div class="info-title">Email</div>
+                <div class="info-text">orders@luxecanapescatering.com</div>
+            </div>
+
+            <div class="info-block">
+                <div class="info-title">Phone / WhatsApp</div>
+                <div class="info-text">+234 813 493 9852</div>
+            </div>
+
+            <div class="info-block">
+                <div class="info-title">Hours</div>
+                <div class="info-text">Mon – Sat: 9AM – 7PM</div>
+            </div>
+
+            <div class="socials">
+                <a href="#">Instagram</a>
+                <a href="#">WhatsApp</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
