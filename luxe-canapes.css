@@ -1043,3 +1043,75 @@ section {
         font-size: clamp(2.4rem, 12vw, 3.2rem);
     }
 }
+
+
+/* Mobile Nav */
+
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 16px 0;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        z-index: 999;
+    }
+    .main-nav.open {
+        display: block;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+    .main-nav ul li a {
+        display: block;
+        padding: 12px 24px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .mobile-menu-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 8px;
+    }
+    .mobile-menu-btn span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #1a1a1a;
+        transition: all 0.3s ease;
+    }
+    /* Animate to X when open */
+    .mobile-menu-btn.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .mobile-menu-btn.open span:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-menu-btn.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+    /* Hide desktop CTA on mobile */
+    .header-cta {
+        display: none;
+    }
+    /* Make header relative so nav can position absolutely */
+    .site-header .container {
+        position: relative;
+    }
+}
+
+
+/* Hide the burger on desktop */
+
+@media (min-width: 769px) {
+    .mobile-menu-btn {
+        display: none;
+    }
+}

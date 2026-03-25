@@ -987,9 +987,6 @@
             .header-inner {
                 padding: 12px 20px
             }
-            nav {
-                display: none
-            }
             .filter-inner {
                 padding: 10px 20px
             }
@@ -1005,6 +1002,93 @@
         .menu-section-block.hidden {
             display: none
         }
+        /* Match nav style to other pages */
+        
+        .main-nav ul {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            list-style: none;
+        }
+        
+        .main-nav a {
+            font-size: .8rem;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--brown-mid);
+            text-decoration: none;
+            padding: 0 18px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            transition: color .2s;
+        }
+        
+        .main-nav a:hover,
+        .main-nav .active a {
+            color: var(--brown);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+        
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--brown);
+            transition: all 0.3s ease;
+        }
+        /* Mobile nav */
+        
+        @media (max-width: 900px) {
+            .mobile-menu-btn {
+                display: flex;
+            }
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                border-bottom: 1px solid var(--brown-pale);
+                z-index: 999;
+                box-shadow: 0 8px 24px rgba(92, 58, 30, .1);
+            }
+            .main-nav.open {
+                display: block;
+            }
+            .main-nav ul {
+                flex-direction: column;
+            }
+            .main-nav a {
+                height: auto;
+                padding: 14px 24px;
+                border-bottom: 1px solid var(--cream-dark);
+            }
+            .mobile-menu-btn.open span:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+            .mobile-menu-btn.open span:nth-child(2) {
+                opacity: 0;
+            }
+            .mobile-menu-btn.open span:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+            header {
+                position: sticky;
+                top: 0;
+                z-index: 200;
+            }
+        }
     </style>
 </head>
 
@@ -1018,20 +1102,25 @@
                 <div class="logo-badge">MC</div>
                 Mocktail Canapés
             </a>
-            <nav>
+            <nav class="main-nav" aria-label="Primary">
                 <ul>
-                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="Aboutus.html">About Us</a></li>
                     <li><a href="services.html">Our Services</a></li>
-                    <li><a href="menu.html">Menu</a></li>
+                    <li class="active"><a href="menu.html">Menu</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <button class="cart-btn" onclick="openCheckout()" aria-label="View cart">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-                <span class="cart-count" id="cartCountBadge">0</span>
-            </button>
+            <div style="display:flex;align-items:center;gap:12px;">
+                <button class="cart-btn" onclick="openCheckout()" aria-label="View cart">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                    <span class="cart-count" id="cartCountBadge">0</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -1556,7 +1645,23 @@
         }
 
         renderCart();
+        // Mobile menu toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const mainNav = document.querySelector('.main-nav');
+        if (menuBtn && mainNav) {
+            menuBtn.addEventListener('click', () => {
+                menuBtn.classList.toggle('open');
+                mainNav.classList.toggle('open');
+            });
+            mainNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuBtn.classList.remove('open');
+                    mainNav.classList.remove('open');
+                });
+            });
+        }
     </script>
+
 </body>
 
 </html>

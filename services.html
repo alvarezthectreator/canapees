@@ -1342,6 +1342,42 @@
                 grid-template-columns: 1fr;
             }
         }
+        
+        @media (max-width: 768px) {
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: var(--primary);
+                border-top: 1px solid rgba(201, 168, 76, 0.3);
+                z-index: 998;
+            }
+            .main-nav.open {
+                display: block;
+            }
+            .main-nav ul {
+                flex-direction: column;
+            }
+            .main-nav a {
+                height: auto;
+                padding: 14px 24px;
+                border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+            }
+            .mobile-menu-btn span {
+                transition: all 0.3s ease;
+            }
+            .mobile-menu-btn.open span:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+            .mobile-menu-btn.open span:nth-child(2) {
+                opacity: 0;
+            }
+            .mobile-menu-btn.open span:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+        }
     </style>
 </head>
 
@@ -1917,7 +1953,7 @@
     </footer>
 
     <script>
-        // Scroll-triggered fade-in animations
+        // Fade-in animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -1936,8 +1972,23 @@
                 if (!isOpen) item.classList.add('open');
             });
         });
-    </script>
 
+        // Mobile menu toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const mainNav = document.querySelector('.main-nav');
+        if (menuBtn && mainNav) {
+            menuBtn.addEventListener('click', () => {
+                menuBtn.classList.toggle('open');
+                mainNav.classList.toggle('open');
+            });
+            mainNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuBtn.classList.remove('open');
+                    mainNav.classList.remove('open');
+                });
+            });
+        }
+    </script>
 </body>
 
 </html>

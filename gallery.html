@@ -9,6 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Cinzel:wght@400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 
     <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
          :root {
             --cream: #F5EFE6;
             --cream-dark: #EDE4D6;
@@ -20,84 +28,293 @@
             --text: #3A2010;
             --white: #FFF9F2;
         }
-        /* BASE */
+        
+        html {
+            scroll-behavior: smooth;
+        }
         
         body {
-            margin: 0;
             font-family: 'Jost', sans-serif;
             background: var(--cream);
             color: var(--text);
+            overflow-x: hidden;
         }
-        /* HEADER */
+        /* ── TOP BAR ── */
+        
+        .topbar {
+            background: var(--brown);
+            color: rgba(255, 249, 242, .75);
+            font-size: .75rem;
+            letter-spacing: .12em;
+            text-align: center;
+            padding: 8px 20px;
+        }
+        /* ── HEADER ── */
         
         header {
             background: var(--white);
             border-bottom: 1px solid var(--brown-pale);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 200;
+            box-shadow: 0 2px 20px rgba(92, 58, 30, .08);
         }
         
         .header-inner {
             max-width: 1200px;
-            margin: auto;
-            padding: 16px 32px;
+            margin: 0 auto;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            padding: 14px 32px;
+            height: 72px;
         }
         
         .logo-text {
             font-family: 'Cinzel', serif;
-            letter-spacing: .2em;
+            font-size: 1.1rem;
+            letter-spacing: .25em;
             color: var(--brown);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
-        nav a {
-            margin-left: 24px;
-            text-decoration: none;
-            color: var(--brown-mid);
+        .logo-badge {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1.5px solid var(--brown-mid);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--brown);
+            background: var(--cream);
+            flex-shrink: 0;
+        }
+        /* ── MAIN NAV ── */
+        
+        .main-nav ul {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            list-style: none;
+        }
+        
+        .main-nav a {
             font-size: .8rem;
-            letter-spacing: .15em;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--brown-mid);
+            text-decoration: none;
+            padding: 0 18px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            transition: color .2s;
         }
         
-        nav a.active {
+        .main-nav a:hover,
+        .main-nav li.active a {
             color: var(--brown);
         }
-        /* HERO */
+        /* ── MOBILE BURGER ── */
+        
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+        
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--brown);
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-btn.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        
+        .mobile-menu-btn.open span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu-btn.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+        /* ── BREADCRUMB ── */
+        
+        .breadcrumb {
+            background: var(--cream-dark);
+            padding: 12px 0;
+            border-bottom: 1px solid var(--brown-pale);
+        }
+        
+        .breadcrumb .inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: .8rem;
+            color: var(--brown-light);
+        }
+        
+        .breadcrumb a {
+            color: var(--brown-mid);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--brown);
+        }
+        /* ── HERO ── */
         
         .gallery-hero {
             text-align: center;
-            padding: 80px 20px 50px;
+            padding: 80px 20px 60px;
             background: var(--cream-dark);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gallery-hero::before,
+        .gallery-hero::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: var(--brown-pale);
+            opacity: .2;
+            pointer-events: none;
+        }
+        
+        .gallery-hero::before {
+            width: 340px;
+            height: 340px;
+            top: -120px;
+            left: -80px;
+        }
+        
+        .gallery-hero::after {
+            width: 240px;
+            height: 240px;
+            bottom: -80px;
+            right: -40px;
+        }
+        
+        .gallery-hero-sub {
+            font-family: 'Cinzel', serif;
+            font-size: .72rem;
+            letter-spacing: .35em;
+            color: var(--brown-light);
+            margin-bottom: 14px;
+            position: relative;
+            z-index: 1;
         }
         
         .gallery-hero h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 4rem;
+            font-size: clamp(3rem, 6vw, 5rem);
             font-style: italic;
+            font-weight: 300;
             color: var(--brown);
+            line-height: 1;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-line {
+            width: 60px;
+            height: 1px;
+            background: var(--brown-light);
+            margin: 20px auto;
         }
         
         .gallery-hero p {
             color: var(--brown-mid);
             font-size: .9rem;
+            letter-spacing: .06em;
+            position: relative;
+            z-index: 1;
         }
-        /* GRID */
+        /* ── FILTER PILLS ── */
+        
+        .filter-bar {
+            background: var(--white);
+            border-bottom: 1px solid var(--cream-dark);
+            position: sticky;
+            top: 72px;
+            z-index: 100;
+        }
+        
+        .filter-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 32px;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+        }
+        
+        .filter-inner::-webkit-scrollbar {
+            height: 3px;
+        }
+        
+        .filter-inner::-webkit-scrollbar-thumb {
+            background: var(--brown-pale);
+            border-radius: 2px;
+        }
+        
+        .filter-pill {
+            padding: 7px 20px;
+            border-radius: 50px;
+            border: 1px solid var(--brown-pale);
+            font-size: .75rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--brown-mid);
+            background: transparent;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all .2s;
+            font-family: 'Jost', sans-serif;
+        }
+        
+        .filter-pill:hover {
+            border-color: var(--brown-mid);
+            color: var(--brown);
+        }
+        
+        .filter-pill.active {
+            background: var(--brown);
+            border-color: var(--brown);
+            color: var(--white);
+        }
+        /* ── GALLERY GRID ── */
         
         .gallery-wrap {
             max-width: 1200px;
-            margin: auto;
-            padding: 40px 32px;
+            margin: 0 auto;
+            padding: 48px 32px 80px;
         }
         
         .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 16px;
+            columns: 3;
+            column-gap: 16px;
         }
-        /* CARD */
+        /* ── GALLERY CARD ── */
         
         .gallery-item {
             position: relative;
@@ -106,127 +323,594 @@
             background: var(--white);
             border: 1px solid var(--cream-dark);
             cursor: pointer;
+            break-inside: avoid;
+            margin-bottom: 16px;
+            transition: transform .3s, box-shadow .3s;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(92, 58, 30, .18);
         }
         
         .gallery-item img {
             width: 100%;
-            height: 260px;
+            display: block;
             object-fit: cover;
-            transition: transform .4s;
+            transition: transform .45s;
         }
         
         .gallery-item:hover img {
-            transform: scale(1.08);
+            transform: scale(1.07);
         }
-        /* OVERLAY */
+        
+        .gallery-item.tall img {
+            aspect-ratio: 3/4;
+        }
+        
+        .gallery-item.wide img {
+            aspect-ratio: 4/3;
+        }
+        
+        .gallery-item.square img {
+            aspect-ratio: 1/1;
+        }
+        /* ── CARD OVERLAY ── */
         
         .gallery-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(58, 32, 16, .5);
+            background: linear-gradient(180deg, transparent 40%, rgba(58, 32, 16, .75) 100%);
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-family: 'Cinzel', serif;
-            font-size: .9rem;
-            letter-spacing: .2em;
+            justify-content: flex-end;
+            padding: 20px;
             opacity: 0;
-            transition: .3s;
+            transition: opacity .3s;
         }
         
         .gallery-item:hover .gallery-overlay {
             opacity: 1;
         }
-        /* LIGHTBOX */
+        
+        .overlay-label {
+            font-family: 'Cinzel', serif;
+            font-size: .75rem;
+            letter-spacing: .2em;
+            color: var(--white);
+            margin-bottom: 6px;
+        }
+        
+        .overlay-tag {
+            font-size: .7rem;
+            color: var(--gold);
+            letter-spacing: .1em;
+        }
+        /* ── LIGHTBOX ── */
         
         .lightbox {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, .85);
+            background: rgba(0, 0, 0, .9);
             display: none;
             align-items: center;
             justify-content: center;
-            z-index: 500;
-        }
-        
-        .lightbox img {
-            max-width: 90%;
-            max-height: 85%;
-            border-radius: 12px;
+            z-index: 600;
+            padding: 20px;
         }
         
         .lightbox.open {
             display: flex;
+        }
+        
+        .lightbox-img-wrap {
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+        }
+        
+        .lightbox img {
+            width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 12px;
+            display: block;
+        }
+        
+        .lightbox-close {
+            position: fixed;
+            top: 20px;
+            right: 24px;
+            background: rgba(255, 255, 255, .15);
+            border: none;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .2s;
+        }
+        
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, .3);
+        }
+        
+        .lightbox-nav {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, .15);
+            border: none;
+            color: #fff;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .2s;
+        }
+        
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, .3);
+        }
+        
+        .lightbox-prev {
+            left: 16px;
+        }
+        
+        .lightbox-next {
+            right: 16px;
+        }
+        
+        .lightbox-caption {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Cinzel', serif;
+            font-size: .75rem;
+            letter-spacing: .2em;
+            color: rgba(255, 255, 255, .6);
+        }
+        /* ── CTA BANNER ── */
+        
+        .cta-banner {
+            background: var(--brown);
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201, 168, 76, .1) 0%, transparent 70%);
+        }
+        
+        .cta-banner h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-style: italic;
+            font-weight: 300;
+            color: var(--white);
+            margin-bottom: 14px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-banner p {
+            color: rgba(255, 249, 242, .7);
+            font-size: .9rem;
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-btns {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .btn {
+            padding: 13px 30px;
+            border-radius: 6px;
+            font-family: 'Cinzel', serif;
+            font-size: .78rem;
+            letter-spacing: .15em;
+            text-decoration: none;
+            transition: all .2s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-gold {
+            background: var(--gold);
+            color: var(--brown);
+        }
+        
+        .btn-gold:hover {
+            background: #b8952e;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, .4);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, .1);
+        }
+        /* ── FOOTER ── */
+        
+        footer {
+            background: var(--brown);
+            border-top: 1px solid rgba(201, 168, 76, .2);
+            color: rgba(255, 249, 242, .7);
+            text-align: center;
+            padding: 32px 20px;
+            font-size: .8rem;
+            letter-spacing: .1em;
+        }
+        
+        footer .footer-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+        /* ── RESPONSIVE ── */
+        
+        @media (max-width: 900px) {
+            .mobile-menu-btn {
+                display: flex;
+            }
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                border-bottom: 1px solid var(--brown-pale);
+                z-index: 999;
+                box-shadow: 0 8px 24px rgba(92, 58, 30, .1);
+            }
+            .main-nav.open {
+                display: block;
+            }
+            .main-nav ul {
+                flex-direction: column;
+            }
+            .main-nav a {
+                height: auto;
+                padding: 14px 24px;
+                border-bottom: 1px solid var(--cream-dark);
+            }
+            .header-inner {
+                padding: 0 20px;
+            }
+            .gallery-grid {
+                columns: 2;
+            }
+            .filter-inner {
+                padding: 10px 20px;
+            }
+            .gallery-wrap {
+                padding: 32px 20px 60px;
+            }
+            .breadcrumb .inner {
+                padding: 0 20px;
+            }
+        }
+        
+        @media (max-width: 540px) {
+            .gallery-grid {
+                columns: 1;
+            }
+        }
+        /* hide logo text on very small screens */
+        
+        @media (max-width: 380px) {
+            .logo-text span {
+                display: none;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- TOP BAR -->
+    <div class="topbar">Brooklyn, New York 🇺🇸 &nbsp;·&nbsp; orders@luxecanapescatering.com &nbsp;·&nbsp; @mocktail_canapes</div>
+
+    <!-- HEADER -->
     <header>
         <div class="header-inner">
-            <a href="#" class="logo-text">Mocktail Canapés</a>
-            <nav>
+            <a href="index.html" class="logo-text">
+                <div class="logo-badge">MC</div>
+                <span>Mocktail Canapés</span>
+            </a>
+            <nav class="main-nav" aria-label="Primary">
                 <ul>
-                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="Aboutus.html">About Us</a></li>
                     <li><a href="services.html">Our Services</a></li>
                     <li><a href="menu.html">Menu</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
+                    <li class="active"><a href="gallery.html">Gallery</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
+            <button class="mobile-menu-btn" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
 
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+        <div class="inner">
+            <a href="index.html">Home</a>
+            <span>›</span>
+            <span style="color: var(--brown); font-weight: 500;">Gallery</span>
+        </div>
+    </div>
+
+    <!-- HERO -->
     <section class="gallery-hero">
-        <h1>Gallery</h1>
-        <p>A glimpse into our beautifully curated events & dishes</p>
+        <div class="gallery-hero-sub">Mocktail Canapés — Brooklyn, NY</div>
+        <h1>Our Gallery</h1>
+        <div class="hero-line"></div>
+        <p>A glimpse into our beautifully curated events, dishes &amp; moments</p>
     </section>
 
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+        <div class="filter-inner">
+            <button class="filter-pill active" onclick="filterGallery('all', this)">All</button>
+            <button class="filter-pill" onclick="filterGallery('food', this)">🍽️ Food</button>
+            <button class="filter-pill" onclick="filterGallery('drinks', this)">🍹 Drinks</button>
+            <button class="filter-pill" onclick="filterGallery('events', this)">🎉 Events</button>
+            <button class="filter-pill" onclick="filterGallery('decor', this)">✨ Styling</button>
+        </div>
+    </div>
+
+    <!-- GALLERY -->
     <div class="gallery-wrap">
-        <div class="gallery-grid">
+        <div class="gallery-grid" id="galleryGrid">
 
-            <!-- IMAGE ITEM -->
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" />
-                <div class="gallery-overlay">VIEW</div>
+            <div class="gallery-item tall" data-cat="food" data-label="Small Chops Platter" onclick="openLightbox(0)">
+                <img src="https://luxecanapescatering.com/wp-content/uploads/2025/10/Meat-Pie-300x291.jpg" alt="Meat Pie" />
+                <div class="gallery-overlay">
+                    <div class="overlay-label">VIEW</div>
+                    <div class="overlay-tag">Pastry</div>
+                </div>
             </div>
 
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" />
-                <div class="gallery-overlay">VIEW</div>
+            <div class="gallery-item square" data-cat="food" data-label="Spring Rolls" onclick="openLightbox(1)">
+                <img src="https://luxecanapescatering.com/wp-content/uploads/2025/10/Spring-Roll-300x291.jpg" alt="Spring Roll" />
+                <div class="gallery-overlay">
+                    <div class="overlay-label">VIEW</div>
+                    <div class="overlay-tag">Finger Food</div>
+                </div>
             </div>
 
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1" />
-                <div class="gallery-overlay">VIEW</div>
+            <div class="gallery-item wide" data-cat="decor" data-label="Luxury Event Styling" onclick="openLightbox(2)">
+                <img src="https://luxecanapescatering.com/wp-content/uploads/2025/10/Decor-300x430.jpg" alt="Event Decor" />
+                <div class="gallery-overlay">
+                    <div class="overlay-label">VIEW</div>
+                    <div class="overlay-tag">Styling</div>
+                </div>
             </div>
 
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187" />
-                <div class="gallery-overlay">VIEW</div>
+            <div class="gallery-item square" data-cat="food" data-label="Chicken Pie" onclick="openLightbox(3)">
+                <img src="https://luxecanapescatering.com/wp-content/uploads/2025/10/Chicken-Pie-300x291.jpg" alt="Chicken Pie" />
+                <div class="gallery-overlay">
+                    <div class="overlay-label">VIEW</div>
+                    <div class="overlay-tag">Pastry</div>
+                </div>
+            </div>
+
+            <div class="gallery-item tall" data-cat="food" data-label="Puff Puff" onclick="openLightbox(4)">
+                <img src="https://luxecanapescatering.com/wp-content/uploads/2025/10/Puff-Puff-1-300x291.jpg" alt="Puff Puff" />
+                <div class="gallery-overlay">
+                    <div class="overlay-label">VIEW</div>
+                    <div class="overlay-tag">Pastry</div>
+                </div>
+            </div>
+
+            <div class="gallery-item wide" data-cat="events" data-label="Event Setup" onclick="openLightbox(5)">
+                <img src="https://luxecanapescatering.com/wp-content/uploads/2025/10/Event-300x430.jpg" alt="Event" />
+                <div class="gallery-overlay">
+                    <div class="overlay-label">VIEW</div>
+                    <div class="overlay-tag">Events</div>
+                </div>
+            </div>
+
+            <div class="gallery-item square" data-cat="food" data-label="Fish Roll" onclick="openLightbox(6)">
+                <img src="https://luxecanapescatering.com/wp-content/uploads/2025/10/Fish-Roll-300x291.jpg" alt="Fish Roll" />
+                <div class="gallery-overlay">
+                    <div class="overlay-label">VIEW</div>
+                    <div class="overlay-tag">Finger Food</div>
+                </div>
+            </div>
+
+            <div class="gallery-item tall" data-cat="decor" data-label="Luxury Presentation" onclick="openLightbox(7)">
+                <img src="https://luxecanapescatering.com/wp-content/uploads/2025/10/luxury-300x288.jpg" alt="Luxury" />
+                <div class="gallery-overlay">
+                    <div class="overlay-label">VIEW</div>
+                    <div class="overlay-tag">Styling</div>
+                </div>
+            </div>
+
+            <div class="gallery-item wide" data-cat="food" data-label="Sausage Roll" onclick="openLightbox(8)">
+                <img src="https://luxecanapescatering.com/wp-content/uploads/2025/10/Sausage-Roll-300x291.jpg" alt="Sausage Roll" />
+                <div class="gallery-overlay">
+                    <div class="overlay-label">VIEW</div>
+                    <div class="overlay-tag">Pastry</div>
+                </div>
+            </div>
+
+            <!-- 3 NEW IMAGES -->
+            <div class="gallery-item square" data-cat="drinks" data-label="Fresh Cocktails" onclick="openLightbox(9)">
+                <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=600&q=80" alt="Cocktails" />
+                <div class="gallery-overlay">
+                    <div class="overlay-label">VIEW</div>
+                    <div class="overlay-tag">Drinks</div>
+                </div>
+            </div>
+
+            <div class="gallery-item tall" data-cat="events" data-label="Party Spread" onclick="openLightbox(10)">
+                <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=600&q=80" alt="Party spread" />
+                <div class="gallery-overlay">
+                    <div class="overlay-label">VIEW</div>
+                    <div class="overlay-tag">Events</div>
+                </div>
+            </div>
+
+            <div class="gallery-item wide" data-cat="drinks" data-label="Mocktail Selection" onclick="openLightbox(11)">
+                <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80" alt="Mocktails" />
+                <div class="gallery-overlay">
+                    <div class="overlay-label">VIEW</div>
+                    <div class="overlay-tag">Mocktails</div>
+                </div>
             </div>
 
         </div>
     </div>
 
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+        <h2>Ready to Create Your Own Moment?</h2>
+        <p>Let us bring the luxury to your next event — bites, sips &amp; styling done beautifully.</p>
+        <div class="cta-btns">
+            <a href="contact.html" class="btn btn-gold">Book Your Event →</a>
+            <a href="https://www.instagram.com/mocktail_canapes" target="_blank" class="btn btn-outline">Send a DM →</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-brand">Mocktail Canapés</div>
+        <div>Brooklyn, New York 🇺🇸 &nbsp;·&nbsp; @mocktail_canapes &nbsp;·&nbsp; orders@luxecanapescatering.com</div>
+        <div style="margin-top:10px;opacity:.5;font-size:.72rem">© 2025 Mocktail Canapés &amp; Catering</div>
+    </footer>
+
     <!-- LIGHTBOX -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <img id="lightboxImg">
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        <button class="lightbox-nav lightbox-prev" onclick="event.stopPropagation(); navLightbox(-1)">‹</button>
+        <div class="lightbox-img-wrap" onclick="event.stopPropagation()">
+            <img id="lightboxImg" src="" alt="" />
+        </div>
+        <button class="lightbox-nav lightbox-next" onclick="event.stopPropagation(); navLightbox(1)">›</button>
+        <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
 
     <script>
-        function openLightbox(el) {
-            const img = el.querySelector("img").src;
-            document.getElementById("lightboxImg").src = img;
-            document.getElementById("lightbox").classList.add("open");
+        // ── MOBILE NAV ──
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const mainNav = document.querySelector('.main-nav');
+
+        if (menuBtn && mainNav) {
+            menuBtn.addEventListener('click', () => {
+                menuBtn.classList.toggle('open');
+                mainNav.classList.toggle('open');
+            });
+            mainNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuBtn.classList.remove('open');
+                    mainNav.classList.remove('open');
+                });
+            });
+        }
+
+        // ── GALLERY FILTER ──
+        function filterGallery(cat, btn) {
+            document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                if (cat === 'all' || item.dataset.cat === cat) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // ── LIGHTBOX ──
+        let currentIndex = 0;
+
+        function getVisibleItems() {
+            return Array.from(document.querySelectorAll('.gallery-item'))
+                .filter(el => el.style.display !== 'none');
+        }
+
+        function openLightbox(idx) {
+            const items = getVisibleItems();
+            currentIndex = idx;
+            const item = items[idx];
+            if (!item) return;
+            const img = item.querySelector('img');
+            document.getElementById('lightboxImg').src = img.src;
+            document.getElementById('lightboxImg').alt = img.alt;
+            document.getElementById('lightboxCaption').textContent = item.dataset.label || '';
+            document.getElementById('lightbox').classList.add('open');
+            document.body.style.overflow = 'hidden';
         }
 
         function closeLightbox() {
-            document.getElementById("lightbox").classList.remove("open");
+            document.getElementById('lightbox').classList.remove('open');
+            document.body.style.overflow = '';
         }
+
+        function navLightbox(dir) {
+            const items = getVisibleItems();
+            currentIndex = (currentIndex + dir + items.length) % items.length;
+            const item = items[currentIndex];
+            const img = item.querySelector('img');
+            document.getElementById('lightboxImg').src = img.src;
+            document.getElementById('lightboxImg').alt = img.alt;
+            document.getElementById('lightboxCaption').textContent = item.dataset.label || '';
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', e => {
+            const lb = document.getElementById('lightbox');
+            if (!lb.classList.contains('open')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navLightbox(-1);
+            if (e.key === 'ArrowRight') navLightbox(1);
+        });
+
+        // Fix lightbox index on click to match visible order
+        document.querySelectorAll('.gallery-item').forEach((item, i) => {
+            item.onclick = () => {
+                const visible = getVisibleItems();
+                const idx = visible.indexOf(item);
+                if (idx !== -1) openLightbox(idx);
+            };
+        });
     </script>
 
 </body>

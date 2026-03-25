@@ -1076,3 +1076,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log('✨ Luxe Canapés animations loaded — all systems go!');
 });
+// Mobile menu toggle
+const menuBtn = document.querySelector('.mobile-menu-btn');
+const mainNav = document.querySelector('.main-nav');
+
+menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('open');
+    mainNav.classList.toggle('open');
+});
+
+// Close menu when a nav link is clicked
+mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        menuBtn.classList.remove('open');
+        mainNav.classList.remove('open');
+    });
+});
