@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>The Menu — Mocktail Canapés</title>
+    <title>The Menu Mocktail Canapés</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -1125,7 +1125,7 @@
     </header>
 
     <section class="menu-hero">
-        <div class="menu-hero-sub">Mocktail Canapés — Brooklyn, NY</div>
+        <div class="menu-hero-sub">Mocktail Canapés Brooklyn, NY</div>
         <h1>The Menu</h1>
         <div class="menu-hero-line"></div>
         <p>Beautifully crafted bites & sips for every celebration. Build your order below.</p>
@@ -1208,7 +1208,7 @@
                         <div class="item-img-wrap"><img src="https://luxecanapescatering.com/wp-content/uploads/2025/10/Puff-Puff-1-300x291.jpg" alt="Puff Puff" onerror="this.style.display='none';this.parentNode.textContent='🟤'" /></div>
                         <div class="item-body">
                             <div class="item-name">Puff Puff</div>
-                            <div class="item-desc">Soft, pillowy delights — served in portions of 12</div>
+                            <div class="item-desc">Soft, pillowy delights served in portions of 12</div>
                             <div class="item-footer">
                                 <div class="item-price">$10.00 <span>/ 12pcs</span></div>
                                 <button class="add-btn" onclick="addToCart('Puff Puff (×12)',10.00,this)">+</button>
@@ -1221,7 +1221,7 @@
             <!-- ENTREE -->
             <div class="menu-section-block" data-cat="entree" id="sec-entree">
                 <div class="section-label">Entrée / Small Chops</div>
-                <p style="font-size:.82rem;color:var(--brown-light);margin-bottom:18px;letter-spacing:.04em;">Pricing on request — add to your enquiry and we'll send a custom quote.</p>
+                <p style="font-size:.82rem;color:var(--brown-light);margin-bottom:18px;letter-spacing:.04em;">Pricing on request add to your enquiry and we'll send a custom quote.</p>
                 <div class="items-list">
                     <div class="list-chip"><span class="chip-name">Stick Gizzard</span><button class="chip-add" onclick="addToCart('Stick Gizzard',0,this)">+</button></div>
                     <div class="list-chip"><span class="chip-name">Peppered Snail</span><button class="chip-add" onclick="addToCart('Peppered Snail',0,this)">+</button></div>
@@ -1241,7 +1241,7 @@
             <!-- MAIN -->
             <div class="menu-section-block" data-cat="main" id="sec-main">
                 <div class="section-label">Main Dishes</div>
-                <p style="font-size:.82rem;color:var(--brown-light);margin-bottom:18px;letter-spacing:.04em;">Pricing on request — tailored to your event size.</p>
+                <p style="font-size:.82rem;color:var(--brown-light);margin-bottom:18px;letter-spacing:.04em;">Pricing on request tailored to your event size.</p>
                 <div class="items-list">
                     <div class="list-chip"><span class="chip-name">Jollof Rice</span><button class="chip-add" onclick="addToCart('Jollof Rice',0,this)">+</button></div>
                     <div class="list-chip"><span class="chip-name">Fried Rice</span><button class="chip-add" onclick="addToCart('Fried Rice',0,this)">+</button></div>
@@ -1315,7 +1315,7 @@
             <div class="success-state" id="successState">
                 <div class="success-icon">✓</div>
                 <h3>Redirecting to WhatsApp!</h3>
-                <p>Your order summary has been prepared. WhatsApp should open automatically — if it doesn't, tap the button below.<br/><br/>
+                <p>Your order summary has been prepared. WhatsApp should open automatically if it doesn't, tap the button below.<br/><br/>
                     <button class="checkout-btn" style="margin-top:16px;max-width:240px;background:#25D366" id="waFallbackBtn" onclick="openWA()">Open WhatsApp →</button><br/><br/>
                     <strong>DM us @mocktail_canapes</strong> on Instagram to follow up.</p>
                 <button class="checkout-btn" style="margin-top:16px;max-width:200px;background:var(--brown)" onclick="closeCheckout();resetCart()">Done</button>
@@ -1545,7 +1545,7 @@
             const notes = document.getElementById('notes').value.trim();
 
             let msg = '';
-            msg += '🍽️ *NEW CATERING ENQUIRY — Mocktail Canapés*\n';
+            msg += '🍽️ *NEW CATERING ENQUIRY  Mocktail Canapés*\n';
             msg += '━━━━━━━━━━━━━━━━━━━━━━\n\n';
 
             msg += '👤 *CUSTOMER DETAILS*\n';
@@ -1566,7 +1566,7 @@
             cart.forEach(item => {
                 const subtotal = item.price * item.qty;
                 total += subtotal;
-                const priceStr = item.price > 0 ? ` — $${subtotal.toFixed(2)}` : ' — (Quote)';
+                const priceStr = item.price > 0 ? `  $${subtotal.toFixed(2)}` : '  (Quote)';
                 msg += `• ${item.name} × ${item.qty}${priceStr}\n`;
             });
             msg += '──────────────────────\n';

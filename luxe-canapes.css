@@ -1,5 +1,5 @@
 /* =============================================
-   LUXE CANAPÉS & CATERING — MAIN STYLESHEET
+   LUXE CANAPÉS & CATERING  MAIN STYLESHEET
    ============================================= */
 
 
@@ -330,7 +330,7 @@ section {
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: scroll;
-    /* important — fixes iOS blank gap bug */
+    /* important  fixes iOS blank gap bug */
     display: flex;
     align-items: flex-end;
     overflow: hidden;

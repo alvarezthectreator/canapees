@@ -1,6 +1,6 @@
 /**
  * ============================================================
- *  LUXE CANAPÉS — Sophisticated Animation Engine
+ *  LUXE CANAPÉS  Sophisticated Animation Engine
  *  Covers: header, hero, sections, images, text, scroll FX
  * ============================================================
  */
@@ -505,7 +505,7 @@ function initHeroAnimations() {
 
 
 /* ─────────────────────────────────────────────────────────────
-   6.  SCROLL-TRIGGERED REVEAL — IntersectionObserver
+   6.  SCROLL-TRIGGERED REVEAL  IntersectionObserver
 ───────────────────────────────────────────────────────────── */
 function initScrollReveal() {
     // Assign animation classes to sections/elements
@@ -591,7 +591,7 @@ function initScrollReveal() {
 
 
 /* ─────────────────────────────────────────────────────────────
-   7.  OFFER PILLS — staggered bounce-in
+   7.  OFFER PILLS  staggered bounce-in
 ───────────────────────────────────────────────────────────── */
 function initPills() {
     const pills = $$('.pill');
@@ -614,7 +614,7 @@ function initPills() {
 
 
 /* ─────────────────────────────────────────────────────────────
-   8.  TEXT SPLITTING — hero tag word-by-word
+   8.  TEXT SPLITTING  hero tag word-by-word
 ───────────────────────────────────────────────────────────── */
 function initTextSplit() {
     // Split hero-tag into word spans for staggered reveal
@@ -660,7 +660,7 @@ function initCheckList() {
 
 
 /* ─────────────────────────────────────────────────────────────
-   10. PARALLAX — hero background + about/who images
+   10. PARALLAX  hero background + about/who images
 ───────────────────────────────────────────────────────────── */
 function initParallax() {
     const hero = $('.hero');
@@ -744,7 +744,7 @@ function initMagneticButtons() {
 
 
 /* ─────────────────────────────────────────────────────────────
-   13. GALLERY STRIP — 3D depth hover & auto scroll
+   13. GALLERY STRIP  3D depth hover & auto scroll
 ───────────────────────────────────────────────────────────── */
 function initGalleryStrip() {
     const track = $('.gallery-track');
@@ -792,7 +792,7 @@ function initGalleryStrip() {
 
 
 /* ─────────────────────────────────────────────────────────────
-   14. SECTION DIVIDERS — animated gold line between sections
+   14. SECTION DIVIDERS  animated gold line between sections
 ───────────────────────────────────────────────────────────── */
 function initSectionDividers() {
     const sections = $$('main > section');
@@ -816,7 +816,7 @@ function initSectionDividers() {
 
 
 /* ─────────────────────────────────────────────────────────────
-   15. TESTIMONIAL — animated quote marks
+   15. TESTIMONIAL  animated quote marks
 ───────────────────────────────────────────────────────────── */
 function initTestimonial() {
     const card = $('.testimonial-card');
@@ -861,7 +861,7 @@ function initTestimonial() {
 
 
 /* ─────────────────────────────────────────────────────────────
-   16. CONTACT FORM — staggered field entrance
+   16. CONTACT FORM  staggered field entrance
 ───────────────────────────────────────────────────────────── */
 function initContactForm() {
     const fields = $$('.contact-form .form-group, .contact-form button');
@@ -910,7 +910,7 @@ function initGoldLabels() {
 
 
 /* ─────────────────────────────────────────────────────────────
-   18. SECTION BACKGROUND PARALLAX — subtle depth layers
+   18. SECTION BACKGROUND PARALLAX  subtle depth layers
 ───────────────────────────────────────────────────────────── */
 function initSectionDepth() {
     // Add subtle background shift on sections as user scrolls
@@ -930,7 +930,7 @@ function initSectionDepth() {
 
 
 /* ─────────────────────────────────────────────────────────────
-   19. MOBILE MENU — smooth slide with overlay
+   19. MOBILE MENU  smooth slide with overlay
 ───────────────────────────────────────────────────────────── */
 function initMobileMenu() {
     const btn = $('.mobile-menu-btn');
@@ -970,7 +970,7 @@ function initMobileMenu() {
 
 
 /* ─────────────────────────────────────────────────────────────
-   20. HEADER SCROLL BEHAVIOUR — shrink & gold border on scroll
+   20. HEADER SCROLL BEHAVIOUR  shrink & gold border on scroll
 ───────────────────────────────────────────────────────────── */
 function initHeaderScroll() {
     const header = $('.site-header');
@@ -1003,7 +1003,7 @@ function initHeaderScroll() {
 
 
 /* ─────────────────────────────────────────────────────────────
-   21. PRODUCT ITEMS — 3D card reveal on scroll
+   21. PRODUCT ITEMS  3D card reveal on scroll
 ───────────────────────────────────────────────────────────── */
 function initProductCards() {
     $$('.product-item').forEach((item, i) => {
@@ -1013,7 +1013,7 @@ function initProductCards() {
 
 
 /* ─────────────────────────────────────────────────────────────
-   22. FOOTER SOCIAL ICONS — bounce on hover
+   22. FOOTER SOCIAL ICONS  bounce on hover
 ───────────────────────────────────────────────────────────── */
 function initFooterSocial() {
     $$('.footer-social a, .top-bar-social a').forEach(a => {
@@ -1029,7 +1029,7 @@ function initFooterSocial() {
 
 
 /* ─────────────────────────────────────────────────────────────
-   23. ENTRANCE ANIMATION FOR WHO-IMAGES — 3D stagger
+   23. ENTRANCE ANIMATION FOR WHO-IMAGES  3D stagger
 ───────────────────────────────────────────────────────────── */
 function initWhoImages() {
     $$('.who-images img').forEach((img, i) => {
@@ -1039,7 +1039,7 @@ function initWhoImages() {
 
 
 /* ─────────────────────────────────────────────────────────────
-   24.  INIT — run everything on DOMContentLoaded
+   24.  INIT  run everything on DOMContentLoaded
 ───────────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
     initScrollProgress();
@@ -1074,7 +1074,7 @@ document.addEventListener('DOMContentLoaded', () => {
         track.style.width = 'max-content';
     }
 
-    console.log('✨ Luxe Canapés animations loaded — all systems go!');
+    console.log('✨ Luxe Canapés animations loaded  all systems go!');
 });
 // Mobile menu toggle
 const menuBtn = document.querySelector('.mobile-menu-btn');
